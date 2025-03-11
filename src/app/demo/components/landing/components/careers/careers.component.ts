@@ -9,19 +9,39 @@ import { Router } from '@angular/router';
   styleUrl: './careers.component.scss'
 })
 export class CareersComponent {
-  desc1 = `\u2022 Serves as subject matter expert, possessing in-depth knowledge of Biometric Processing.\n
-  \u2022 Participates as needed in all phases of software development with emphasis on the planning, analysis, testing, integration, documentation, and presentation phases. \n
-  \u2022 Directs and controls activities for a client, having overall responsibility for financial management , methods, and staffing to ensure that technical requirements are met. \n
-  \u2022 Interactions involve client negotiations and interfacing with senior management. \n
-  \u2022 Decision-making and domain knowledge may have a critical impact on overall project implementation. \n
-  \u2022 May supervise others. \n
-  \u2022 Provides technical/management leadership on major tasks or technology assignments. Establishes goals and plans that meet project objectives . `
+  desc1 = `We are looking for freelance SMEs for an ongoing gaming project on Unity. Interested candidates should be willing to give content regarding various topics related to Unity for which we will be creating a book and additional learning material. The candidates should have: \n
+  \u2022 Minimum experience of 1-2 years with good domain knowledge in Unity, publishing games on apps, cross-platform game development, NavMesh, path finding algorithms, \n
+  AL decision-making processes, AI Agents, flocking algorithms, shaders, shader effects and programming. \n
+  \u2022 Familiarity with Unity Editor, Render Pipeline Packages, Shader Development Tools, Performance Profiling Tools, Visual Effects (VFX) Tool NavMesh components, Visual Studio. \n
+  \u2022 Experience working on debugging and profiling tools. \n
+  \u2022 Good written English skills. \n
+  \u2022 Availability on all working days, not just weekends. \n
+  \u2022 The following software tools installed on laptops/desktops:
+  \t 1. Unity 2022.3.30f1
+  \t 2. Unity Editor
+  \t 3. DOTS Packages
+  \t 4. Unity Profiler
+  \t 5. Debugging and Profiling tools \n 
+  \u2022 A few physics and rendering packages - Visual Studio 2022 - Render Pipeline Packages - Shader Development Tools - Visual Effects (VFX) Tools \n
+  \u2022 If interested, please respond with your resume and screenshots of the specified Unity version and VS 2022. \n`
   qual1 = `\u2022 Master’s Degree in a related field – Science, CS, Biometric Systems\n
   \u2022 10 years of related experience\n
   \u2022 Has Biometric Processing domain and expert technical knowledge. `
   benefits1 = `\u2022 Flexible Work Hours \n
   \u2022 Part Time \n
   \u2022 Work From Home`;
+
+  desc2 = `We are looking for freelance Instructional Designers (IDs) with proficient, practical knowledge of creating and managing Levels 1-3 e-learning courses. While content analysis and storyboarding are the primary requirements, experience in using an authoring tool to create SCORM-compliant output would be preferrable. The candidate should: \n
+  \u2022 Have strong analytical, logical, visualization, and content mapping skills. \n
+  \u2022 Have at least 3-4 years of experience as an ID. \n
+  \u2022 Have strong knowledge of ID principles and models. \n
+  \u2022 Be willing to contribute to e-learning projects related to any computer technical and non-technical domain. \n
+  \u2022 Be able to contribute 3-4 hours during the daytime on each working day. \n
+  \u2022 Be proficient in English and MS Office. \n
+  \u2022 Be able to coordinate / communicate with the team from time to time. \n
+  \u2022 Be able to manage a team, if required. \n
+  \u2022 Be able to use AI, if required. \n
+  \u2022 Be willing to work from home as a freelancer. \n`
   email!: FormControl;
   firstName!: FormControl;
   lastName!: FormControl;
@@ -55,19 +75,19 @@ export class CareersComponent {
 ];
   products: any = [
     {
-     position: 'Subject Matter Expert',
-     posted: '23rd Dec, 2023',
+     position: 'Subject Matter Expert - Unity',
+     posted: '8th Mar, 2025',
      description: this.desc1,
      fullTime: false,
      workFromHome: true,
-     qualification: this.qual1,
+     qualification: '\t-',
      benefits: this.benefits1,
      collapse: false
     },
     {
-      position: 'Senior Manager',
-      posted: '1st Jan, 2024',
-      description: '\t-',
+      position: 'Instructional Designer (ID)',
+      posted: '8th Mar, 2025',
+      description: this.desc2,
       fullTime: true,
       workFromHome: true,
       qualification: '\t-',

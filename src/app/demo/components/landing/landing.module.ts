@@ -40,6 +40,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { PdfViewerComponent } from './components/pdf-viewer/pdf-viewer.component';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 
 @NgModule({
     imports: [
@@ -75,7 +76,8 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
         PdfViewerModule,
         DataViewModule,
         MultiSelectModule,
-        OverlayPanelModule
+        OverlayPanelModule,
+        OrganizationChartModule
     ],
     declarations: [
         LandingComponent, 
