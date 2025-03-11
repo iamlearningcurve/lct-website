@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,12 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   @Output() submitOutput = new EventEmitter();
   selectedState: any = null;
-
+  step = 0;
+  img_home = 'assets/demo/images/landing/2-p.png';
+  point = 2;
   states: any[] = [
       {name: 'Arizona', code: 'Arizona'},
       {name: 'California', value: 'California'},
@@ -30,8 +33,36 @@ export class HomeComponent {
     {name: 'Provide Solutions', name2: 'For your Unique Training', company: 'Peak Interactive', content: '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”'},
     {name: 'Ensuring', name2: 'Competitive Pricing for all your needs', company: 'Peak Interactive', content: '“Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”'}
 ];
+subscriptions: any;
   constructor(public router: Router) { }
  
-  
+  ngOnInit(): void {
+    this.subscriptions = setInterval(() => {
+      this.step = this.step + 1;
+      if (this.step >= 3) {
+        this.step = 0
+      }
+      this.showSlides()
+    }, 4000)
+         
+  } 
 
+  showSlides() {
+    let i;
+    let dots = document.getElementsByClassName("dot");
+   
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    dots[this.step].className += " active";
+  }
+
+  ngOnDestroy () {
+    clearInterval(this.subscriptions)
+  }
+
+  changePicture(n: number) {
+    this.point = n;
+    this.img_home = "assets/demo/images/landing/" + n + '-p.png'
+  }
 }
