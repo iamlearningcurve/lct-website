@@ -45,7 +45,7 @@
         </div>
         <br/><br/><br/><br/><br/><br/>
     
-        <app-home *ngIf="home" (submitOutput)="switchPages('contact')"></app-home>  
+        <app-home *ngIf="home" (submitOutput)="switchPages('contact')" (submitOutput2)="switchPages('portfolio')"></app-home>  
         <app-teams *ngIf="teams"></app-teams>      
         <app-portfolio *ngIf="portfolio"></app-portfolio>
         <app-careers *ngIf="careers"></app-careers>

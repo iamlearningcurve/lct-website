@@ -10,8 +10,12 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   @Output() submitOutput = new EventEmitter();
+  @Output() submitOutput2 = new EventEmitter();
   selectedState: any = null;
   step = 0;
+  hero1 = "background-image: url('assets/demo/images/landing/engaging-content.webp')";
+  hero2 = "background-image: url('assets/demo/images/landing/localization-banner.webp')";
+  hero3 = "background-image: url('assets/demo/images/landing/hero-3.jpg')";
   img_home = 'assets/demo/images/landing/2-p.png';
   point = 2;
   states: any[] = [
@@ -64,5 +68,9 @@ subscriptions: any;
   changePicture(n: number) {
     this.point = n;
     this.img_home = "assets/demo/images/landing/" + n + '-p.png'
+  }
+
+  navToPortfolio() {
+    this.submitOutput2.emit()
   }
 }
