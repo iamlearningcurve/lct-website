@@ -47,7 +47,7 @@ export class CareersComponent {
   lastName!: FormControl;
   position!: FormControl;
   phoneNumber!: FormControl;
-  file!: FormControl;
+  // file!: FormControl;
   applyForm!: FormGroup;
   category: any;
   categoryList = [
@@ -113,14 +113,14 @@ export class CareersComponent {
     this.lastName = new FormControl('', [Validators.required]);
     this.phoneNumber = new FormControl('', [Validators.required]);
     this.position = new FormControl('', [Validators.required]);
-    this.file = new FormControl('', [])
+    // this.file = new FormControl('', [])
     this.applyForm = new FormGroup({
       email: this.email,
       firstName: this.firstName,
       lastName: this.lastName,
       phoneNumber: this.phoneNumber,
       position: this.position,
-      file: this.file
+      // file: this.file
     });
   }
   

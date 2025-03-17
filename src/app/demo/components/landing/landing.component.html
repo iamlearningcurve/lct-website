@@ -21,6 +21,11 @@
                             </a>
                         </li>
                         <li>
+                            <a (click)="switchPages('services'); menu.click()" pRipple [class]="services ? 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 active-tab' : 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 passive-tab'">
+                                <span>Services</span>
+                            </a>
+                        </li>
+                        <li>
                             <a (click)="switchPages('portfolio'); menu.click()" pRipple [class]="portfolio ? 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 active-tab' : 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 passive-tab'">
                                 <span>Portfolio</span>
                             </a>
@@ -30,11 +35,7 @@
                                 <span>Careers</span>
                             </a>
                         </li>
-                        <li>
-                            <a (click)="switchPages('services'); menu.click()" pRipple [class]="services ? 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 active-tab' : 'flex m-0 md:ml-5 px-0 py-3 text-900 font-bold line-height-3 passive-tab'">
-                                <span>Services</span>
-                            </a>
-                        </li>
+                       
                     </ul>
                     <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
                         <button pButton pRipple label="Login" style="background-color: transparent; color: rgb(56,84,154) !important; border: 1px solid rgb(56,84,154) !important;" class="p-button-text p-button border-none font-light line-height-2 text-blue-500" (click)="navToLogin(); menu.click()"></button>

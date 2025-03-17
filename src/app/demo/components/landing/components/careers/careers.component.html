@@ -269,8 +269,11 @@
                 <p-inputMask mask="9999999999" placeholder="Phone Number" [formControl]="phoneNumber"></p-inputMask>
                 <small *ngIf="applyForm.controls.phoneNumber.status === 'INVALID' && applyForm.controls.phoneNumber.dirty">Phone Number Required</small>
             </div>
-            <div class="field col-12 mb-4">
+            <!-- <div class="field col-12 mb-4">
                 <input pInputText type="file" id="updf" name="updf" accept="application/pdf" [formControl]="file"/>
+            </div> -->
+            <div class="field col-12 mb-4">
+                <p>Share your resume to <a class="text-blue-600 font-bold no-underline cursor-pointer" href="mailto:info@learningcurvetechnologies.com">{{'info@learningcurvetechnologies.com'}}</a></p>
             </div>
             <div class="col-12 text-right">
                 <button pButton pRipple label="Submit" style="background-color: rgb(56,84,154); color: white !important" class="p-button-text p-button border-none font-light line-height-2 text-blue-500" (click)="submitForm()"></button>
