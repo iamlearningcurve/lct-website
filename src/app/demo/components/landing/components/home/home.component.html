@@ -1,5 +1,5 @@
 
-<div class="relative p-2 overflow-hidden bg-no-repeat bg-cover" style="background-image: url('assets/demo/images/landing/hero-3.jpg');">
+<div class="relative p-2 overflow-hidden bg-no-repeat bg-cover" [style]="step == 0 ? hero3 : step === 1 ? hero2 : hero1">
     <div class="text-center my-6 relative">
         <div class="text-6xl font-bold mb-1 text-white">{{step === 0 ? 'Engaging Content, Impactful Multimedia!': step === 1 ? 'Seamless Localization, Global Reach!': 'Custom Website, Optimized Tech Solutions!'}}</div>
         <div class="text-6xl text-blue-400 font-bold mb-4">{{step === 0 ? 'Learn | Create | Transform': step === 1 ? 'Translate | Adapt | Connect': 'Develop | Host | Support'}}</div>
@@ -10,6 +10,9 @@
                 <span class="p-ink"></span>
             </button>
         </div>
+        <!-- Next and previous buttons -->
+        <a class="prev" (click)="plusSlides(-1)" (mouseover)="stopScroll()" (mouseout)="resumeScroll()" >&#10094;</a>
+        <a class="next" (click)="plusSlides(1)" (mouseover)="stopScroll()" (mouseout)="resumeScroll()">&#10095;</a>
         <div class="flex justify-content-center mt-4" style="text-align:center">
             <span class="dot"></span> 
             <span class="dot"></span> 
@@ -17,20 +20,17 @@
           </div>
     </div>
 </div>
-<div class="surface-section px-4 py-8 md:px-6 lg:px-8">
+<!-- <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
     <div class="flex flex-column lg:flex-row align-items-center justify-content-between">
         <div class="text-center lg:text-left lg:pr-8">
-            <div class="text-900 text-4xl font-bold mb-3">Who are we ?</div>
+            <div class="text-orange-500 font-medium mb-3 text-center text-4xl" style="color: #15836F !important">Who We Are ?</div>
             <div class="text-600 text-lg mt-3 mb-5 line-height-3 custom-blue-color text-justify">We are a leading content development company with a passion for transforming dynamic ideas into impactful learning experiences. Backed by years of
                 expertise, we craft innovative solutions that engage, empower, and connect audiences worldwide. Our commitment to creativity and technology
                 ensures seamless adaptability in an ever-evolving digital landscape.
             </div>
         </div>
         <div class="mt-5 lg:mt-0 flex flex-wrap lg:flex-nowrap">
-            <!-- <button pbutton="" pripple="" label="Contact Us" class="p-element p-ripple px-5 py-3 mr-0 lg:mr-3 font-bold mb-3 lg:mb-0 w-full lg:w-auto white-space-nowrap p-button p-component">
-                <span class="p-button-label">Contact Us</span>
-                <span class="p-ink"></span>
-            </button> -->
+           
             <button pbutton="" pripple="" label="View Our Portfolio" class="p-element p-ripple px-5 py-3 p-button-outlined font-bold w-full lg:w-auto white-space-nowrap p-button p-component" (click)="navToPortfolio()" style="background-color: rgb(56,84,154) !important; color: white !important">
                 <span class="p-button-icon p-button-icon-right pi pi-arrow-right" aria-hidden="true"></span>
                 <span class="p-button-label">View Our Portfolio</span>
@@ -39,14 +39,30 @@
             
         </div>
     </div>
-</div>       
+</div>        -->
+
+<div class="surface-section px-4 pt-8 pb-4 md:px-6 lg:px-8">
+    <div class="text-700 text-center">
+        <div class="text-blue-600 mb-3 text-4xl" style="color: #15836F !important">Who We Are ?</div>
+        <div class="text-900 text-4xl font-bold mb-3">Empowering Learning through Innovation and Expertise</div>
+        <div class="text-600 text-lg mt-3 mb-5 line-height-3 custom-blue-color text-justify">We are a leading content development company with a passion for transforming dynamic ideas into impactful learning experiences. Backed by years of
+            expertise, we craft innovative solutions that engage, empower, and connect audiences worldwide. Our commitment to creativity and technology
+            ensures seamless adaptability in an ever-evolving digital landscape.</div>
+            <button pbutton="" pripple="" label="View Our Portfolio" class="p-element p-ripple px-5 py-3 p-button-outlined font-bold w-full lg:w-auto white-space-nowrap p-button p-component" (click)="navToPortfolio()" style="background-color: rgb(56,84,154) !important; color: white !important">
+                <span class="p-button-icon p-button-icon-right pi pi-arrow-right" aria-hidden="true"></span>
+                <span class="p-button-label">View Our Portfolio</span>
+                <span class="p-ink"></span>
+            </button>
+    </div>
+</div>
+
 <div class="surface-section px-4 pt-8 md:px-6 lg:px-8 text-center">
     <div class="mb-3 font-bold text-4xl">
-        <div class="text-orange-500 font-medium mb-3 text-center" style="color: #15836F !important">What We Offer</div>
+        <div class="text-orange-500 font-medium mb-3 text-center txt-yellow" >What We Offer</div>
         <span class="text-900">Empowering your </span>
-        <span class="txt-yellow">digital journey with tailored solutions.</span>
+        <span style="color: #15836F !important">digital journey with tailored solutions</span>
     </div>
-    <div class="text-600 text-xl mt-3 mb-5 line-height-3 custom-blue-color">We offer comprehensive solutions in content development, localization, technology, and web development to help you scale and succeed in the digital world</div>
+    <div class="text-600 text-xl mt-3 mb-5 line-height-3 custom-blue-color">We offer comprehensive solutions in content development, localization, technology, and web development to help you scale and succeed in the digital world.</div>
     <div class="grid">
         <div class="col-12 md:col-3 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
@@ -58,29 +74,29 @@
                 </svg>
             </span>
             <div class="text-900 text-xl mb-3 font-medium">Content Development & Media</div>
-            <span class="text-700 line-height-3">Crafting engaging deliverables that meet specific client needs, ensuring optimal learning outcomes.</span>
+            <span class="text-700 line-height-3">Crafting engaging deliverables that meet specific client needs, ensuring optimal learning outcomes</span>
         </div>
         <div class="col-12 md:col-3 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-map-marker text-4xl txt-yellow-1"></i>
             </span>
             <div class="text-900 text-xl mb-3 font-medium">Localisation</div>
-            <span class="text-700 line-height-3">Bridging language and culture to make your content resonate with global audiences.</span>
+            <span class="text-700 line-height-3">Bridging language and culture to make your content resonate with global audiences</span>
         </div>
         <div class="col-12 md:col-3 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-cog text-4xl txt-yellow-1"></i>
             </span>
             <div class="text-900 text-xl mb-3 font-medium">Technology</div>
-            <span class="text-700 line-height-3">Delivering expert support to maintain and enhance your digital presence.</span>
+            <span class="text-700 line-height-3">Delivering expert support to maintain and enhance your digital presence</span>
         </div>
         
         <div class="col-12 md:col-3 mb-4 px-5">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
                 <i class="pi pi-desktop text-4xl txt-yellow-1"></i>
             </span>
-            <div class="text-900 text-xl mb-3 font-medium">Website Development & Hosting Support</div>
-            <span class="text-700 line-height-3">Designing and developing secure and scalable responsive websites for seamless user experiences.</span>
+            <div class="text-900 text-xl mb-3 font-medium">Website Development & Hosting</div>
+            <span class="text-700 line-height-3">Designing and developing secure and scalable responsive websites for seamless user experiences</span>
         </div>
         <!-- <div class="col-12 md:col-4 md:mb-4 mb-0 px-3">
             <span class="p-3 shadow-2 mb-3 inline-block surface-card" style="border-radius: 10px">
@@ -99,7 +115,7 @@
     </div>
 </div>
 <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
-    <div class="text-center font-bold text-blue-600 mb-4">WHY CHOOSE US</div>
+    <div class="text-orange-500 font-medium mb-3 text-center text-4xl" style="color: #15836F !important">Why Choose Us?</div>
     <div class="text-center font-bold text-900 mb-5 text-4xl">Your trusted partner for innovative, scalable, and seamless digital solutions</div>
     <div class="grid">
         <div class="col-12 lg:col-6 flex align-items-center justify-content-center">
@@ -193,8 +209,9 @@
 
 <!-- Testimonials -->
 <div class="surface-section-1 px-4 pb-6 pt-2 md:px-6 lg:px-6">
-    <div class="mb-3 text-center text-900 text-4xl txt-yellow">Testimonials</div>
-    <div class="text-600 text-xl text-center mt-2 mb-3 line-height-3 custom-blue-color">Discover how our solutions have made a difference for our clients and their businesses.</div>
+    <div class="text-yellow font-medium mb-3 text-center text-4xl">Testimonials</div>
+    <div class="text-center font-bold text-900 mb-5 text-4xl">What Our Clients Say: <span style="color: #15836F !important">Real Stories, Real Impact</span></div>
+    <div class="text-600 text-xl text-center mt-2 mb-3 line-height-3 custom-blue-color">Discover How Our Tailored Solutions Have Made a Lasting Impact, Transforming Businesses and Driving Success for Our Clients</div>
     <div class="grid grid-nogutter">
         <div class="col-12 lg:col-6 xl:col-6 p-4">
             <div class="surface-card shadow-2 p-4 flex flex-column align-items-center md:flex-row md:align-items-stretch h-full" style="border-radius: 10px;">

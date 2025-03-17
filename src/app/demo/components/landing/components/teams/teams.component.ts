@@ -10,122 +10,14 @@ import { Router } from '@angular/router';
 export class TeamsComponent {
   doRightPopup = false;
   selectedNodes: any = []
-  // orgData: any[] = [
-  //   {
-  //       label: 'CEO',
-  //       expanded: true,
-  //       data: {
-  //         image: 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png',
-  //         name: 'Amy Elsner',
-  //         title: 'CEO'
-  //       },
-  //       children: [
-  //           {
-  //               label: 'Advisory Team',
-  //               expanded: true,
-  //               children: [
-  //                   {
-  //                       label: 'Head - Delivery',
-  //                       expanded: true,
-  //                       children: [
-  //                         {
-  //                             label: 'Project Management',
-  //                             expanded: true,
-  //                             children: [
-  //                               {
-  //                                 label: 'Instructional Design',
-  //                                 expanded: true,
-  //                                 children: [
-  //                                   {
-  //                                     label: 'Media Development',
-  //                                     expanded: true,
-  //                                     children: [
-  //                                       {
-  //                                         label: 'Technology',
-  //                                         expanded: true,
-  //                                         children: [
-  //                                           {
-  //                                             label: 'Quality',
-  //                                             expanded: true,
-  //                                           }
-  //                                         ]
-  //                                       }
-  //                                     ]    
-  //                                   }
-  //                                 ]
-  //                               }
-  //                             ]
-  //                         }
-  //                       ]
-  //                   },
-  //                   {
-  //                       label: 'Head - Business',
-  //                       expanded: true,
-  //                       children: [
-  //                         {
-  //                             label: 'Business Development',
-  //                             expanded: true,
-  //                             children: [
-  //                               {
-  //                                 label: 'Marketing',
-  //                                 expanded: true,
-  //                                 children: [
-  //                                   {
-  //                                     label: 'Sales',
-  //                                     expanded: true,
-  //                                   }
-  //                                 ]
-  //                               }
-  //                             ]
-  //                         }
-  //                       ]
-  //                   },
-  //                   {
-  //                     label: 'Head - Finance',
-  //                     expanded: true,
-  //                     children: [
-  //                       {
-  //                           label: 'Finance',
-  //                           expanded: true,
-  //                           children: [
-  //                             {
-  //                               label: 'Marketing',
-  //                               expanded: true
-  //                             }
-  //                           ]
-  //                       }
-  //                     ]
-  //                 },
-  //                 {
-  //                   label: 'Head - Human Resource',
-  //                   expanded: true,
-  //                   children: [
-  //                     {
-  //                         label: 'Recruitment',
-  //                         expanded: true,
-  //                         children: [
-  //                           {
-  //                             label: 'Project Management',
-  //                             expanded: true
-  //                           }
-  //                         ]
-  //                     }
-  //                   ]
-  //               },
-  //               ]
-  //           }
-  //       ]
-  //   }
-  // ];
+  hrsOfLearning = false;
+  teamMembers = false;
+  clients = false;
+  projects = false;
   orgData = [
     {
-        expanded: true,
-        type: 'person',
-        data: {
-            image: 'assets/demo/images/avatar/ravi.png',
-            name: 'Ravi Kumar Konakere',
-            title: 'CEO'
-        },
+      expanded: true,
+      label: 'CEO',
         children: [
             {
                 expanded: true,
@@ -255,6 +147,34 @@ export class TeamsComponent {
       setTimeout(() => {
         element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'})
       }, wait)
+    }
+  }
+
+  expandData(i) {
+    if (i === 0) {
+      if (this.hrsOfLearning) {
+        this.hrsOfLearning = false;
+      } else {
+        this.hrsOfLearning = true;
+      }
+    } else if (i === 1) {
+      if (this.teamMembers) {
+        this.teamMembers = false;
+      } else {
+        this.teamMembers = true;
+      }
+    } else if (i === 2) {
+      if (this.clients) {
+        this.clients = false;
+      } else {
+        this.clients = true;
+      }
+    } else {
+      if (this.projects) {
+        this.projects = false;
+      } else {
+        this.projects = true;
+      }
     }
   }
 
