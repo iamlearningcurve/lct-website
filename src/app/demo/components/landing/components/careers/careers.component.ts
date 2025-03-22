@@ -8,22 +8,24 @@ import { Router } from '@angular/router';
   templateUrl: './careers.component.html',
   styleUrl: './careers.component.scss'
 })
+
 export class CareersComponent {
-  desc1 = `We are looking for freelance SMEs for an ongoing gaming project on Unity. Interested candidates should be willing to give content regarding various topics related to Unity for which we will be creating a book and additional learning material. The candidates should have: \n
-  \u2022 Minimum experience of 1-2 years with good domain knowledge in Unity, publishing games on apps, cross-platform game development, NavMesh, path finding algorithms, \n
-  AL decision-making processes, AI Agents, flocking algorithms, shaders, shader effects and programming. \n
-  \u2022 Familiarity with Unity Editor, Render Pipeline Packages, Shader Development Tools, Performance Profiling Tools, Visual Effects (VFX) Tool NavMesh components, Visual Studio. \n
-  \u2022 Experience working on debugging and profiling tools. \n
-  \u2022 Good written English skills. \n
-  \u2022 Availability on all working days, not just weekends. \n
-  \u2022 The following software tools installed on laptops/desktops:
+  desc1 = `We are looking for SMEs for our gaming project on Unity and Unreal both. Interested candidates should be willing to give content regarding various topics related to Unity for which we will be creating a book and additional learning material. The candidates should have: \n
+  Minimum experience of 1-2 years with good domain knowledge in Unity and Unreal, publishing games on apps, AR VR on Unreal, Multiplayer Games on Unreal, corss-platform game development. \n
+  Familiarity with both basic and advanced topics of Unity and Unreal. \n
+  Good written English skills. \n
+  Availability on all working days, not just weekends. \n
+  The following software tools installed on laptops/desktops:
   \t 1. Unity 2022.3.30f1
   \t 2. Unity Editor
-  \t 3. DOTS Packages
-  \t 4. Unity Profiler
-  \t 5. Debugging and Profiling tools \n 
-  \u2022 A few physics and rendering packages - Visual Studio 2022 - Render Pipeline Packages - Shader Development Tools - Visual Effects (VFX) Tools \n
-  \u2022 If interested, please respond with your resume and screenshots of the specified Unity version and VS 2022. \n`
+  \t 3. Unity Profiler
+  \t 4. Debugging and Profiling tools
+  \t 5. Visual Studio 2022
+  \t 6. GIT version control system
+  \t 7. Unreal Game Engine
+  \t 8. NVIDIA GeForce GTX 470 or AMD Radeon HD 6870 or equivalent DX11 GPU
+  \t 8. Graphics API: DirectX 11, DirectX 12 (Windows only), or Vulkan \n 
+  If interested, please respond with your resume and screenshots of the specified Unity version, Unreal GUI, and VS 2022. \n`
   qual1 = `\u2022 Master’s Degree in a related field – Science, CS, Biometric Systems\n
   \u2022 10 years of related experience\n
   \u2022 Has Biometric Processing domain and expert technical knowledge. `
@@ -75,7 +77,7 @@ export class CareersComponent {
 ];
   products: any = [
     {
-     position: 'Subject Matter Expert - Unity',
+     position: 'SME - Unreal Gaming',
      posted: '8th Mar, 2025',
      description: this.desc1,
      fullTime: false,
@@ -84,16 +86,16 @@ export class CareersComponent {
      benefits: this.benefits1,
      collapse: false
     },
-    {
-      position: 'Instructional Designer (ID)',
-      posted: '8th Mar, 2025',
-      description: this.desc2,
-      fullTime: true,
-      workFromHome: true,
-      qualification: '\t-',
-      benefits: this.benefits1,
-      collapse: false
-     }
+    // {
+    //   position: 'Instructional Designer (ID)',
+    //   posted: '8th Mar, 2025',
+    //   description: this.desc2,
+    //   fullTime: true,
+    //   workFromHome: true,
+    //   qualification: '\t-',
+    //   benefits: this.benefits1,
+    //   collapse: false
+    //  }
     
   ];
   visible = false;
